@@ -28,10 +28,10 @@ FEATURE="gene"
 INT_DIST=500000
 
 # Where do you want output files?
-OUTPUTDIR="/scratch/eld72413/Salty_Nut/CultivatedOnly/SNPcalling/GenicRegionsTests"
+OUTPUTDIR="/scratch/eld72413/Salty_Nut/CultivatedOnly/SNPcalling"
 
 # Name for final output .bed file (no .bed extension here)
-OUT_NAME="GFF_Test1"
+OUT_NAME="GFF_Gene_Regions"
 
 ####################################
 ########## INTERVALS CODE ##########
