@@ -17,8 +17,8 @@ module load BEDTools/2.29.2-GCC-8.2.0-2.31.1
 ####################################
 
 #	Genome Annotation File
-GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gff3"
-#GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gtf"
+#GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gff3"
+GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gtf"
 
 # What feature to capture? (Gene, Exon, etc)
 FEATURE="gene"
