@@ -21,7 +21,8 @@ module load BEDTools/2.29.2-GCC-8.2.0-2.31.1
 GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gtf"
 
 # What feature to capture? (Gene, Exon, etc)
-FEATURE="gene"
+#FEATURE="gene"
+FEATURE="exon"
 
 #	Maximum distance between features (in bp) to be merged?
 INT_DIST=500000
@@ -30,7 +31,7 @@ INT_DIST=500000
 OUTPUTDIR="/scratch/eld72413/Salty_Nut/CultivatedOnly/SNPcalling/GenicRegionsTests"
 
 # Name for final output .bed file (no .bed extension here)
-OUT_NAME="GFF3_Test1"
+OUT_NAME="GTF_Test1"
 
 ####################################
 ########## INTERVALS CODE ##########
@@ -43,11 +44,11 @@ if [[ "$ANN_ext" == "gff3" ]]; then
 	echo "Merging $FEATURE regions within $INT_DIST from GFF3 file"
 	gff2bed < ${GEN_ANN} > ${OUTPUTDIR}/BED_Convert.bed
 elif [[ "$ANN_ext" == "gtf" ]]; then
-	echo "Merging $FEATURE regions within $INT_DIST from GFF3 file"
+	echo "Merging $FEATURE regions within $INT_DIST from GTF file"
 	gtf2bed < ${GEN_ANN} > ${OUTPUTDIR}/BED_Convert.bed
 else
 	echo "The genome annotation file does not appear to be a recognized file format, exiting..."
-	exit 1
+	#exit 1
 fi
 
 
