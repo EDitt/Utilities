@@ -17,12 +17,12 @@ module load BEDTools/2.29.2-GCC-8.2.0-2.31.1
 ####################################
 
 #	Genome Annotation File
-#GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gff3"
-GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gtf"
+GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gff3"
+#GEN_ANN="/scratch/eld72413/Ha412HOv2.0/Ha412HOv2.0-20181130.gtf"
 
 # What feature to capture? (Gene, Exon, etc)
-#FEATURE="gene"
-FEATURE="exon"
+FEATURE="gene"
+#FEATURE="exon"
 
 #	Maximum distance between features (in bp) to be merged?
 INT_DIST=500000
@@ -31,7 +31,7 @@ INT_DIST=500000
 OUTPUTDIR="/scratch/eld72413/Salty_Nut/CultivatedOnly/SNPcalling/GenicRegionsTests"
 
 # Name for final output .bed file (no .bed extension here)
-OUT_NAME="GTF_Test1"
+OUT_NAME="GFF_Test1"
 
 ####################################
 ########## INTERVALS CODE ##########
