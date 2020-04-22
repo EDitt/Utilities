@@ -40,20 +40,20 @@ OUT_NAME="GFF3_Test1"
 ANN_ext="$(basename ${GEN_ANN##*.})"
 
 if [[ "$ANN_ext" == "gff3" ]]; then
-	echo "Merging $FEATURE regions from GFF3 file"
-	COMMAND="gff2bed"
-	#gff2bed < ${GEN_ANN} | \
+	echo "Merging $FEATURE regions within $INT_DIST from GFF3 file"
+	gff2bed < ${GEN_ANN} > ${OUTPUTDIR}/BED_Convert.bed
 elif [[ "$ANN_ext" == "gtf" ]]; then
-	echo "Merging $FEATURE regions from GFF3 file"
-	COMMAND="gtf2bed"
-	#gtf2bed < ${GEN_ANN} | \
+	echo "Merging $FEATURE regions within $INT_DIST from GFF3 file"
+	gtf2bed < ${GEN_ANN} > ${OUTPUTDIR}/BED_Convert.bed
 else
 	echo "The genome annotation file does not appear to be a recognized file format, exiting..."
 	exit 1
 fi
 
-echo "$COMMAND < ${GEN_ANN}" | \
-awk -v var="${FEATURE}" '{if ($8 == var) {print $0}}' | \
+
+#echo "$COMMAND < ${GEN_ANN}" | head
+awk -v var="${FEATURE}" '{if ($8 == var) {print $0}}' ${OUTPUTDIR}/BED_Convert.bed | \
 
 bedtools merge -i stdin -d ${INT_DIST} > ${OUTPUTDIR}/${OUT_NAME}.bed
 
+rm ${OUTPUTDIR}/BED_Convert.bed
